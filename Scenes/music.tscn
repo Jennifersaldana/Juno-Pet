@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dgwqxbq4sui36"]
+
+[ext_resource type="AudioStream" uid="uid://ofwsefpnefcn" path="res://Assets/music/Sweet Memories.wav" id="1_rfr6e"]
+
+[node name="music" type="AudioStreamPlayer"]
+stream = ExtResource("1_rfr6e")
+autoplay = true

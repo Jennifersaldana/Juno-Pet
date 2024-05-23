@@ -1,0 +1,103 @@
+[gd_scene load_steps=11 format=3 uid="uid://d24hghhny1i25"]
+
+[ext_resource type="Texture2D" uid="uid://dyscxlqqkgvp7" path="res://Assets/Space UI pack/assets/Background_0.png" id="1_02yb1"]
+[ext_resource type="Script" path="res://Scenes/main.gd" id="1_581ts"]
+[ext_resource type="Texture2D" uid="uid://dxl55vrp64s0g" path="res://Assets/Space UI pack/assets/Background_1.png" id="2_1qlfl"]
+[ext_resource type="Texture2D" uid="uid://cbrne3cm30mcg" path="res://Assets/Space UI pack/assets/Background_2.png" id="3_h20ol"]
+[ext_resource type="Texture2D" uid="uid://b172m7s32hcfa" path="res://Assets/Space UI pack/assets/PlanetPink.png" id="4_2ds0b"]
+[ext_resource type="Texture2D" uid="uid://ba71dpvvb326o" path="res://Assets/Space UI pack/assets/PlanetBlue.png" id="5_gfpen"]
+[ext_resource type="Texture2D" uid="uid://6rom705i1tr3" path="res://Assets/Space UI pack/assets/PowerSymbol.png" id="6_au3bh"]
+[ext_resource type="Texture2D" uid="uid://yfvipvt7jn1d" path="res://Assets/Space UI pack/assets/Frame.png" id="7_m6y0s"]
+[ext_resource type="Theme" uid="uid://i7x28hgfv7fc" path="res://Tres/button.tres" id="8_50wxm"]
+[ext_resource type="Texture2D" uid="uid://uvhi4gmkjeug" path="res://Assets/Space UI pack/assets/StartButton.png" id="9_0boam"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_581ts")
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="PowerSymbol" type="Sprite2D" parent="Node2D"]
+position = Vector2(503, 922)
+texture = ExtResource("6_au3bh")
+
+[node name="bluebg" type="Sprite2D" parent="Node2D"]
+position = Vector2(540, 960)
+scale = Vector2(0.5625, 1.77778)
+texture = ExtResource("1_02yb1")
+
+[node name="cloud" type="Sprite2D" parent="Node2D"]
+position = Vector2(540, 1305.5)
+scale = Vector2(0.5625, 1.13796)
+texture = ExtResource("2_1qlfl")
+
+[node name="star2" type="Sprite2D" parent="Node2D"]
+position = Vector2(584, 458.5)
+scale = Vector2(0.610417, 0.849074)
+texture = ExtResource("3_h20ol")
+
+[node name="star3" type="Sprite2D" parent="Node2D"]
+position = Vector2(585, 1248.5)
+scale = Vector2(0.609375, 0.682407)
+texture = ExtResource("3_h20ol")
+
+[node name="PlanetPink" type="Sprite2D" parent="Node2D"]
+position = Vector2(844, 266)
+scale = Vector2(1.17476, 1.11306)
+texture = ExtResource("4_2ds0b")
+
+[node name="PlanetBlue" type="Sprite2D" parent="Node2D"]
+position = Vector2(188, 1681)
+scale = Vector2(1.08562, 1.12288)
+texture = ExtResource("5_gfpen")
+
+[node name="Menu" type="NinePatchRect" parent="."]
+offset_left = 295.0
+offset_top = 592.0
+offset_right = 821.0
+offset_bottom = 1589.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("7_m6y0s")
+
+[node name="Play" type="Button" parent="Menu"]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 18.0
+offset_top = 116.0
+offset_right = 482.0
+offset_bottom = 251.0
+theme = ExtResource("8_50wxm")
+
+[node name="StartButton" type="Sprite2D" parent="Menu"]
+position = Vector2(249, 185)
+scale = Vector2(1.03795, 0.889262)
+texture = ExtResource("9_0boam")
+
+[node name="NewGame" type="Button" parent="Menu"]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 19.0
+offset_top = 319.0
+offset_right = 482.0
+offset_bottom = 460.0
+theme = ExtResource("8_50wxm")
+
+[node name="Settings" type="Button" parent="Menu"]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 18.0
+offset_top = 515.0
+offset_right = 481.0
+offset_bottom = 656.0
+theme = ExtResource("8_50wxm")
+
+[node name="Quit" type="Button" parent="Menu"]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 18.0
+offset_top = 709.0
+offset_right = 481.0
+offset_bottom = 850.0
+theme = ExtResource("8_50wxm")
+
+[connection signal="pressed" from="Menu/Play" to="." method="_on_play_pressed"]

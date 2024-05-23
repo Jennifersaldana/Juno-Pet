@@ -1,0 +1,97 @@
+[gd_scene load_steps=12 format=3 uid="uid://bdju3h1308jv5"]
+
+[ext_resource type="Script" path="res://Scripts/cat.gd" id="1_27ttt"]
+[ext_resource type="Texture2D" uid="uid://b5lc68etuuxpa" path="res://Assets/cat/fuff_fear.png" id="1_d85hg"]
+[ext_resource type="Texture2D" uid="uid://ckd0sukcq3u08" path="res://Assets/cat/fuff_hate.png" id="2_gn8vm"]
+[ext_resource type="Texture2D" uid="uid://silxkp68mxn4" path="res://Assets/cat/fuff_miff.png" id="3_k7uhv"]
+[ext_resource type="Texture2D" uid="uid://bjnh31cn13huw" path="res://Assets/cat/fuff_norm.png" id="4_bb3dm"]
+[ext_resource type="Texture2D" uid="uid://c1cx5rb2ys2pi" path="res://Assets/cat/fuff_smile.png" id="5_2thap"]
+[ext_resource type="Texture2D" uid="uid://1h1snfwjfnq4" path="res://Assets/cat/fuff_smug.png" id="6_58r3x"]
+[ext_resource type="Texture2D" uid="uid://bmlocju0tx8w4" path="res://Assets/cat/fuff_stern.png" id="7_p7rt5"]
+[ext_resource type="Texture2D" uid="uid://dn05ikctm0fb4" path="res://Assets/cat/fuff_zzz.png" id="8_kq1om"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p50ko"]
+radius = 219.043
+height = 960.355
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nv5ce"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_d85hg")
+}],
+"loop": true,
+"name": &"fear",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_gn8vm")
+}],
+"loop": true,
+"name": &"hate",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_k7uhv")
+}],
+"loop": true,
+"name": &"miff",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_bb3dm")
+}],
+"loop": true,
+"name": &"norm",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_2thap")
+}],
+"loop": true,
+"name": &"smile",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_58r3x")
+}],
+"loop": true,
+"name": &"smug",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_p7rt5")
+}],
+"loop": true,
+"name": &"stern",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_kq1om")
+}],
+"loop": true,
+"name": &"zzz",
+"speed": 5.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_27ttt")
+
+[node name="body" type="CollisionShape2D" parent="."]
+position = Vector2(44, 46)
+rotation = -2.61625
+shape = SubResource("CapsuleShape2D_p50ko")
+debug_color = Color(0.984314, 0.117647, 0, 0.419608)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0.250006, 3.25003)
+scale = Vector2(1.00078, 0.991414)
+sprite_frames = SubResource("SpriteFrames_nv5ce")
+animation = &"miff"
